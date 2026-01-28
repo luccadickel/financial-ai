@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1160c75d-b025-46fb-be7d-9a82115f47d0" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/api/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/resources/application.yml" afterDir="false" />
-    </list>
+    <list default="true" id="1160c75d-b025-46fb-be7d-9a82115f47d0" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -37,9 +35,9 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "feat/implementando-entidades",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projects/Personal/FinancialAI/pom.xml",
+    "last_opened_file_path": "C:/Projects/Personal/FinancialAI/api/pom.xml",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.0"
