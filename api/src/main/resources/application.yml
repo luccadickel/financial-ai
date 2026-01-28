@@ -50,6 +50,6 @@ logging:
 
 jwt:
   public:
-    key: ${JWT_PUBLIC_KEY:classpath:authz.pub}
+    key: ${JWT_PUBLIC_KEY}
   private:
-    key: ${JWT_PRIVATE_KEY:classpath:authz.pem}
+    key: ${JWT_PRIVATE_KEY}
