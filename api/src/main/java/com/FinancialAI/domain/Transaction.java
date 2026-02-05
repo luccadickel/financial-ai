@@ -29,13 +29,13 @@ public class Transaction {
     @JoinColumn(name = "category_id", nullable = false)
     private Category category;
 
-    BigDecimal amount;
-    LocalDate transactionDate;
-    String description;
+    private BigDecimal amount;
+    private LocalDate transactionDate;
+    private String description;
 
     @Enumerated(EnumType.STRING)
-    TransactionType transactionType;
+    private TransactionType transactionType;
 
-    LocalDateTime createdAt;
-    LocalDateTime updatedAt;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }

@@ -7,7 +7,9 @@ import com.FinancialAI.domain.User;
 import com.FinancialAI.mapper.CategoryMapper;
 import com.FinancialAI.repository.CategoryRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
 
@@ -23,7 +25,7 @@ public class CategoryService {
         User userLogged = authService.getUser();
 
         if (categoryRepository.existsByUserIdAndNameIgnoreCase(userLogged.getId(), categoryRequest.name())) {
-            throw new IllegalArgumentException("Categoria já cadastrada");
+            throw new ResponseStatusException(HttpStatus.CONFLICT, "Categoria já cadastrada");
         }
 
         Category category = categoryMapper.toEntity(categoryRequest);
@@ -39,7 +41,7 @@ public class CategoryService {
 
         Category category = categoryRepository
                 .findByIdAndUserId(categoryId, userLogged.getId())
-                .orElseThrow(() -> new IllegalArgumentException("Categoria não encontrada"));
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND,"Categoria não encontrada"));
 
         categoryRepository.delete(category);
     }
