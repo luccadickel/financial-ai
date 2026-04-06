@@ -1,0 +1,48 @@
+<app-form 
+  [formGroup]="registerForm" 
+  submitText="Criar Conta" 
+  (submitEvent)="onSubmit()">
+  
+  <div class="form-group">
+    <label for="name">Nome Completo</label>
+    <input type="text" id="name" formControlName="name" placeholder="Digite seu nome" />
+    
+    @if (registerForm.get('name')?.invalid && registerForm.get('name')?.touched) {
+      <span class="error-text">O nome é obrigatório.</span>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="emailReg">E-mail</label>
+    <input type="email" id="emailReg" formControlName="email" placeholder="Digite seu e-mail" />
+    
+    @if (registerForm.get('email')?.invalid && registerForm.get('email')?.touched) {
+      <span class="error-text">E-mail inválido ou obrigatório.</span>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="passwordReg">Senha</label>
+    <input type="password" id="passwordReg" formControlName="password" placeholder="Crie uma senha" />
+    
+    @if (registerForm.get('password')?.invalid && registerForm.get('password')?.touched) {
+      <span class="error-text">A senha é obrigatória.</span>
+    }
+  </div>
+
+  <div class="form-group">
+    <label for="confirmPassword">Confirmar Senha</label>
+    <input type="password" id="confirmPassword" formControlName="confirmPassword" placeholder="Repita a senha" />
+    
+    @if (registerForm.hasError('passwordMismatch') && registerForm.get('confirmPassword')?.touched) {
+      <span class="error-text">As senhas não coincidem.</span>
+    }
+  </div>
+
+  <div class="login_text">
+    <button type="button" class="login_btn" (click)="goToLogin.emit()">
+      Já tem uma conta? Entrar
+    </button>
+  </div>
+
+</app-form>

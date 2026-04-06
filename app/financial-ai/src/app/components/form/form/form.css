@@ -1,0 +1,38 @@
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form_btn {
+  padding: 12px 20px;
+  background-color: var(--deep-tech-blue);
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--body-font);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 8px;
+  width: 100%;
+}
+
+.form_btn:hover:not(:disabled) {
+  background-color: #334155; 
+  transform: translateY(-1px);
+}
+
+.disabled {
+  padding: 12px 20px;
+  background-color: #E2E8F0;
+  color: #94A3B8;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: var(--body-font);
+  border: none;
+  border-radius: 8px;
+  cursor: not-allowed;
+  margin-top: 8px;
+  width: 100%;
+}
