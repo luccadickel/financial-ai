@@ -1,0 +1,21 @@
+.login_text {
+  margin-top: 24px;
+  text-align: center;
+}
+
+.login_btn {
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--sky-light-blue);
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--body-font);
+  transition: color 0.2s ease;
+}
+
+.login_btn:hover {
+  color: var(--deep-tech-blue);
+  text-decoration: underline;
+}
