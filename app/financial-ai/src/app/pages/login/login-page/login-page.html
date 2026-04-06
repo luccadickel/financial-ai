@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="form_box">
+    
+    <h2>{{ isLoginView() ? 'Bem-vindo de volta' : 'Crie sua Conta' }}</h2>
+
+    @if (errorMessage()) {
+      <div class="erro_true">{{ errorMessage() }}</div>
+    }
+
+    @if (successMessage()) {
+      <div class="sucesso_true">{{ successMessage() }}</div>
+    }
+
+    @if (isLoginView()) {
+      <app-login-form (submitLogin)="onLoginSubmit($event)" (goToRegister)="toggleView()"></app-login-form>
+    } @else {
+      <app-register-form (submitRegister)="onRegisterSubmit($event)" (goToLogin)="toggleView()"></app-register-form>
+    }
+
+  </div>
+</div>
