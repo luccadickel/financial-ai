@@ -1,0 +1,140 @@
+.sidebar-container {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--deep-tech-blue);
+  display: flex;
+  flex-direction: column;
+  padding: 24px 0 0 0;
+  z-index: 100;
+  color: #FFFFFF;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
+}
+
+.sidebar-header {
+  padding: 0 24px;
+  margin-bottom: 40px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  letter-spacing: -0.5px;
+}
+
+.text-white {
+  color: #FFFFFF;
+}
+
+.text-blue {
+  color: var(--sky-light-blue);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 0 16px;
+  flex: 1; 
+}
+
+.sidebar-btn {
+  padding: 12px 16px;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: #94A3B8;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 500;
+  font-family: var(--body-font);
+  transition: all 0.2s ease;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-btn:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.sidebar-btn.active {
+  background-color: rgba(16, 185, 129, 0.1); 
+  color: #FFFFFF;
+  font-weight: 600;
+  border-left: 4px solid var(--growth-green);
+  padding-left: 12px;
+}
+
+.sidebar-btn.active .icon-wrapper svg {
+  stroke: var(--growth-green);
+  fill: rgba(16, 185, 129, 0.2);
+}
+
+/* Footer Section */
+.sidebar-footer {
+  padding: 0 16px;
+  margin-top: auto;
+  margin-bottom: 12px;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.user-profile:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.avatar {
+  min-width: 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: var(--accent-aqua);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: var(--heading-font);
+  font-size: 16px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  font-family: var(--body-font);
+}

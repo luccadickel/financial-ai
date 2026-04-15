@@ -1,0 +1,96 @@
+<aside class="sidebar-container">
+  <div class="sidebar-header">
+    <div class="logo-container">
+      <svg width="40" height="40" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="34" cy="24" r="17" fill="#0D9488" stroke="#1E293B" stroke-width="3" />
+        <circle cx="34" cy="24" r="14" fill="#14B8A6" />
+        <text x="34" y="31" fill="#FFFFFF" font-size="20" font-family="Poppins" font-weight="bold"
+          text-anchor="middle">$</text>
+
+        <circle cx="22" cy="46" r="20" fill="#10B981" stroke="#1E293B" stroke-width="4" />
+        <circle cx="22" cy="46" r="17" fill="#34D399" />
+        <text x="22" y="54" fill="#FFFFFF" font-size="24" font-family="Poppins" font-weight="bold"
+          text-anchor="middle">$</text>
+
+        <rect x="46" y="50" width="6" height="18" fill="#3B82F6" rx="2" stroke="#1E293B" stroke-width="1" />
+        <rect x="54" y="42" width="6" height="26" fill="#60A5FA" rx="2" stroke="#1E293B" stroke-width="1" />
+        <rect x="62" y="34" width="6" height="34" fill="#2DD4BF" rx="2" stroke="#1E293B" stroke-width="1" />
+
+        <path d="M 38 48 L 48 38 L 54 44 L 66 28" fill="none" stroke="#1E293B" stroke-width="10" stroke-linejoin="round"
+          stroke-linecap="round" />
+        <path d="M 38 48 L 48 38 L 54 44 L 66 28" fill="none" stroke="#2DD4BF" stroke-width="5" stroke-linejoin="round"
+          stroke-linecap="round" />
+
+        <path d="M 54 28 L 68 20 L 64 36 Z" fill="#1E293B" stroke="#1E293B" stroke-width="4" stroke-linejoin="round" />
+        <path d="M 57 28 L 66 23 L 63 33 Z" fill="#2DD4BF" stroke="#2DD4BF" stroke-width="2" stroke-linejoin="round" />
+      </svg>
+      <h2 class="sidebar-title">
+        <span class="text-white">Financial</span> <span class="text-blue">AI</span>
+      </h2>
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    @for (item of menuItems(); track item) {
+    <button class="sidebar-btn" [class.active]="activeMenu() === item" (click)="selectMenu(item)">
+      <span class="icon-wrapper">
+        @switch (item) {
+        @case ('dashboard') {
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="7" height="9" />
+          <rect x="14" y="3" width="7" height="5" />
+          <rect x="14" y="12" width="7" height="9" />
+          <rect x="3" y="16" width="7" height="5" />
+        </svg>
+        }
+        @case ('transactions') {
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8" />
+          <path d="M12 18V6" />
+        </svg>
+        }
+        @case ('categories') {
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z" />
+        </svg>
+        }
+        @case ('chatbot') {
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        </svg>
+        }
+        @default {
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10" />
+        </svg>
+        }
+        }
+      </span>
+      {{ menuLabels[item] }}
+    </button>
+    }
+  </nav>
+
+  <div class="sidebar-footer">
+    <div class="user-profile" (click)="selectMenu(sideBarEnumType.PERFIL)">
+      <div class="avatar">
+        {{ currentUser()?.name?.charAt(0) || currentUser()?.email?.charAt(0)?.toUpperCase() || 'U' }}
+      </div>
+      <div class="user-info">
+        <span class="user-name">
+          @if (currentUser()) {
+          {{ currentUser()?.name || currentUser()?.email || 'Sem Nome' }}
+          } @else {
+          Carregando...
+          }
+        </span>
+      </div>
+    </div>
+  </div>
+</aside>
