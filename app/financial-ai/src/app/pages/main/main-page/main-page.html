@@ -1,0 +1,36 @@
+<div class="main-layout">
+  <app-side-bar (menuSelected)="onMenuSelected($event)"></app-side-bar>
+
+  <main class="main-content">
+    @switch (currentView()) {
+    @case (viewTypes.DASHBOARD) {
+    <div>
+      <h2>Dashboard</h2>
+    </div>
+    }
+    @case (viewTypes.TRANSACTIONS) {
+    <div>
+      <h2>Transações</h2>
+    </div>
+    }
+    @case (viewTypes.CATEGORIES) {
+    <div>
+      <h2>Categorias</h2>
+    </div>
+    }
+    @case (viewTypes.PERFIL) {
+    <div>
+      <h2>Perfil</h2>
+    </div>
+    }
+    @case (viewTypes.CHATBOT) {
+    <div>
+      <h2>Chatbot</h2>
+    </div>
+    }
+    @default {
+    <div>Selecione uma opção</div>
+    }
+    }
+  </main>
+</div>

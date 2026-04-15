@@ -8,13 +8,11 @@ import { LoginRequest, LoginResponse, UserRegisterRequest, UserResponse } from '
   providedIn: 'root'
 })
 export class AuthService {
-  
-  public user = signal<UserResponse | null>(null)
 
+  public user = signal<UserResponse | null>(null)
   public apiUrl = signal<String>('http://localhost:8080')
 
   private http = inject(HttpClient)
-
   private router = inject(Router)
 
   public login(request: LoginRequest): Observable<LoginResponse> {
@@ -40,7 +38,7 @@ export class AuthService {
 
   public getUser(): Observable<UserResponse> {
     return this.http.get<UserResponse>(`${this.apiUrl()}/users/me`).pipe(
-      tap(userData => this.user.set(userData))
+      tap((userData) => this.user.set(userData))
     )
   }
 
@@ -57,7 +55,7 @@ export class AuthService {
   }
 
   logout(silent = false): void {
-    localStorage.removeItem('token') 
+    localStorage.removeItem('token')
     this.user.set(null)
     if (!silent) this.router.navigate(['/login'])
   }

@@ -4,11 +4,11 @@
     <h2>{{ isLoginView() ? 'Bem-vindo de volta' : 'Crie sua Conta' }}</h2>
 
     @if (errorMessage()) {
-      <div class="erro_true">{{ errorMessage() }}</div>
+      <div class="error_true">{{ errorMessage() }}</div>
     }
 
     @if (successMessage()) {
-      <div class="sucesso_true">{{ successMessage() }}</div>
+      <div class="success_true">{{ successMessage() }}</div>
     }
 
     @if (isLoginView()) {

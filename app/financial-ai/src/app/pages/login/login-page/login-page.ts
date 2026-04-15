@@ -29,7 +29,7 @@ export class LoginPage {
   onLoginSubmit(request: LoginRequest): void {
     this.authService.login(request).subscribe({
       next: () => { 
-        this.router.navigate(['/home'])
+        this.router.navigate(['/main-page'])
       },
       error: (errorResponse) => {
         const msg = errorResponse.error?.message || 'Erro ao fazer login. Verifique suas credenciais.'
