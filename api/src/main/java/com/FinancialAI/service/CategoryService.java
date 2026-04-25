@@ -49,7 +49,7 @@ public class CategoryService {
     public List<CategoryResponse> listCategories() {
         User userLogged = authService.getUser();
 
-        List<Category> categories = categoryRepository.findAllByUserId(userLogged.getId());
+        List<Category> categories = categoryRepository.findAllByUserIdOrUserIdIsNull(userLogged.getId());
 
         return categories.stream()
                 .map(categoryMapper::toResponse)

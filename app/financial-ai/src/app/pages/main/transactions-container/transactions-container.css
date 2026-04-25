@@ -1,0 +1,206 @@
+.page-container {
+  padding: 32px 40px;
+  max-width: 1200px;
+  margin: 0 auto; 
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.page-title {
+  font-family: var(--heading-font);
+  font-size: 24px;
+  font-weight: 600; 
+  color: var(--deep-tech-blue);
+  margin: 0;
+}
+
+.btn-primary {
+  background-color: var(--growth-green); 
+  color: #FFFFFF;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px; 
+  font-family: var(--body-font);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 6px rgba(16, 185, 129, 0.2); 
+}
+
+.btn-primary:hover {
+  background-color: #0e9f6e; 
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(16, 185, 129, 0.3);
+}
+
+.btn-primary:active {
+  transform: translateY(1px);
+}
+
+.page-content {
+  width: 100%;
+}
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--card-bg, #ffffff);
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.filter-input {
+  padding: 10px 14px;
+  border: 1px solid var(--border-color, #d1d5db);
+  border-radius: 6px;
+  font-size: 14px;
+  color: var(--text-main, #374151);
+  background-color: #ffffff;
+  min-width: 200px;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  cursor: pointer;
+}
+
+.filter-input:focus {
+  border-color: var(--growth-green, #10b981);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.15);
+  outline: none;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+input[type="month"]::-webkit-calendar-picker-indicator:hover {
+  opacity: 1;
+}
+
+.btn-clear {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: var(--text-muted, #6b7280);
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+  margin-left: auto;
+}
+
+.btn-clear:hover {
+  background-color: var(--warm-neutral-gray, #f3f4f6);
+  color: var(--text-main, #111827);
+}
+
+.confirm-modal {
+  max-width: 400px;
+  text-align: center;
+  padding: 32px 24px;
+}
+
+.warning-icon-wrapper {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: #EF4444;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 20px auto;
+}
+
+.confirm-title {
+  margin-bottom: 12px;
+  font-size: 20px;
+  color: var(--text-main, #111827);
+}
+
+.confirm-text {
+  color: var(--text-muted, #6b7280);
+  margin-bottom: 32px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.confirm-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.flex-btn {
+  flex: 1;
+}
+
+.btn-danger {
+  background-color: #EF4444;
+  border-color: #EF4444;
+}
+
+.btn-danger:hover {
+  background-color: #dc2626;
+  border-color: #dc2626;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(17, 24, 39, 0.6); 
+  backdrop-filter: blur(4px); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; 
+}
+
+.modal-content {
+  background-color: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.confirm-actions button {
+  font-family: inherit; 
+  font-weight: 600;    
+  font-size: 14px;
+  padding: 10px 16px;   
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.confirm-actions .btn-secondary {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color, #d1d5db);
+  color: var(--text-main, #374151);
+}
+
+.confirm-actions .btn-secondary:hover {
+  background-color: var(--warm-neutral-gray, #f3f4f6);
+}
