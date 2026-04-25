@@ -1,0 +1,121 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(30, 41, 59, 0.5); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  backdrop-filter: blur(3px); 
+}
+
+.modal-content {
+  background-color: var(--card-bg);
+  width: 100%;
+  max-width: 550px; 
+  border-radius: 12px; 
+  padding: 32px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  animation: slideDown 0.3s ease-out; 
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.modal-title {
+  font-size: 20px;
+  margin: 0;
+}
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.btn-close:hover {
+  color: #EF4444; 
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.half {
+  flex: 1;
+}
+
+select {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 8px;
+  border: 1px solid var(--input-border);
+  background: var(--input-bg);
+  color: var(--text-main);
+  font-family: var(--body-font);
+  font-size: 15px;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--input-border-focus);
+  box-shadow: var(--input-shadow-focus);
+}
+
+::ng-deep .modal-form-layout {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr; 
+  gap: 16px;
+}
+
+::ng-deep .modal-form-layout .form-group,
+::ng-deep .modal-form-layout .form-row {
+  grid-column: span 2;
+  margin-bottom: 4px; 
+}
+
+.btn-secondary {
+  grid-column: 1;
+  padding: 12px 20px;
+  background-color: transparent;
+  color: var(--text-muted);
+  border: 1px solid var(--input-border);
+  border-radius: 8px;
+  font-family: var(--body-font);
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 8px;
+}
+
+.btn-secondary:hover {
+  background-color: var(--warm-neutral-gray);
+  color: var(--deep-tech-blue);
+  border-color: #94A3B8;
+}
+
+::ng-deep .modal-form-layout button[type="submit"] {
+  grid-column: 2;
+  margin-top: 8px;
+}

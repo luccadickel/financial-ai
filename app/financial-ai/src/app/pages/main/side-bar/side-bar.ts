@@ -1,12 +1,11 @@
 import { Component, signal, output, inject, OnInit } from '@angular/core';
-import { TitleCasePipe } from '@angular/common';
 import { SideBarEnum } from '../../../models/enums/side-bar.enum';
 import { AuthService } from '../../../services/auth.service';
 
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [TitleCasePipe],
+  imports: [],
   templateUrl: './side-bar.html',
   styleUrl: './side-bar.css',
 })

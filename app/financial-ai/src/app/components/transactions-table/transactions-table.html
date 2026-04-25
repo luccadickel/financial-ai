@@ -1,0 +1,67 @@
+<div class="table-container">
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th (click)="onSort.emit('category.name')" class="sortable">Categoria ↕</th>
+        <th>Descrição</th>
+        <th (click)="onSort.emit('amount')" class="sortable">Valor ↕</th>
+        <th (click)="onSort.emit('transactionType')" class="sortable">Tipo ↕</th>
+        <th (click)="onSort.emit('transactionDate')" class="sortable">Data ↕</th>
+        <th>Criado em</th>
+        <th>Alterado em</th>
+        <th class="actions-header">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (transaction of pageData()?.content; track transaction.id) {
+        <tr>
+          <td>{{ transaction.id }}</td>
+          <td>{{ transaction.categoryName }}</td>
+          <td>{{ transaction.description }}</td>
+          
+          <td [ngClass]="{'text-income': transaction.transactionType === 'INCOME', 'text-expense': transaction.transactionType === 'EXPENSE'}">
+            {{ transaction.amount | currency:'BRL':'symbol' }}
+          </td>
+          
+          <td>
+            <span class="badge" [ngClass]="transaction.transactionType === 'INCOME' ? 'badge-income' : 'badge-expense'">
+              {{ translateType(transaction.transactionType) }}
+            </span>
+          </td>
+          
+          <td>{{ transaction.transactionDate | date:'dd/MM/yyyy' }}</td>
+          <td>{{ transaction.createdAt | date:'dd/MM/yyyy HH:mm' }}</td>
+          <td>{{ transaction.updatedAt | date:'dd/MM/yyyy HH:mm' }}</td>
+          
+          <td class="actions-cell">
+            <button class="btn-action edit" (click)="onEdit.emit(transaction)" title="Editar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg>
+            </button>
+            <button class="btn-action delete" (click)="onDelete.emit(transaction)" title="Excluir">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+            </button>
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="9" class="empty-message">Nenhuma transação encontrada.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  @if (pageData(); as page) {
+    <div class="pagination-controls">
+      <button class="btn-secondary" [disabled]="page.number === 0" (click)="onPageChange.emit(page.number - 1)">
+        Anterior
+      </button>
+      <span class="pagination-info">
+        Página {{ page.number + 1 }} de {{ page.totalPages === 0 ? 1 : page.totalPages }}
+      </span>
+      <button class="btn-secondary" [disabled]="page.number >= page.totalPages - 1" (click)="onPageChange.emit(page.number + 1)">
+        Próxima
+      </button>
+    </div>
+  }
+</div>
